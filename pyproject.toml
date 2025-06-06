@@ -1,0 +1,41 @@
+[project]
+name = "rtorrent-natpmp"
+version = "1.0.0"
+description = "Enable NAT-PMP forwarding for rtorrent"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "loguru>=0.7.3",
+    "py-natpmp>=0.2.5",
+    "pydantic>=2.11.5",
+]
+
+[dependency-groups]
+dev = [
+    "black>=25.1.0",
+    "commitizen>=4.8.2",
+    "pre-commit>=4.2.0",
+    "pylint>=3.3.7",
+    "pyright>=1.1.401",
+]
+
+[tool.black]
+line-length = 120
+
+[tool.pylint.format]
+max-line-length = 120
+
+[tool.pylint."messages control"]
+disable = [
+    "missing-docstring",
+    "too-few-public-methods",
+    "too-many-locals",
+    "duplicate-code"
+]
+
+[tool.pyright]
+include = ["app"]
+typeCheckingMode = "strict"
+reportUnknownVariableType = "warning"
+reportUnknownMemberType = "warning"
+reportAttributeAccessIssue = "warning"
