@@ -1,0 +1,10 @@
+
+{
+  "log_level": "WARNING",
+  "log_dir": "logs",
+  "gateway_ip": "10.2.0.1",
+  "refresh_interval": 45,
+  "rtorrent_xmlrpc_url": "http://localhost/rpcs/rtorrent",
+  "allow_dht": false,
+  "bind_address": "0.0.0.0"
+}

@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# PROVIDE: rtorrent_natpmp
+# REQUIRE: LOGIN NETWORKING FILESYSTEMS
+
+. /etc/rc.subr
+
+name=rtorrent_natpmp
+rcvar=${name}_enable
+pidfile=/var/run/${name}.pid
+rtorrent_natpmp_chdir=/opt/rtorrent_natpmp
+
+command=/usr/sbin/daemon
+command_args="--child-pidfile ${pidfile} --close-fds --user rtorrent_natpmp --syslog --title rtorrent_natpmp sh deploy/run.sh"
+procname=sh
+
+load_rc_config $name
+run_rc_command "$1"
